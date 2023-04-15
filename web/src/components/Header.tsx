@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Plus, X } from "phosphor-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import logoImg from "../assets/logo.svg";
+import { NewHabbitForm } from "./NewHabbitForm";
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,7 +36,12 @@ export const Header = () => {
             <Dialog.Close className="absolute right-6 top-6 text-zinc-400 hover:text-zinc-200">
               <X size={24} aria-label="Fechar" />
             </Dialog.Close>
-            Conteudo do modal
+
+            <Dialog.Title className="text-3xl leading-tight font-extrabold">
+              Criar Habito
+            </Dialog.Title>
+
+            <NewHabbitForm />
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
